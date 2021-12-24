@@ -17,6 +17,7 @@ IN PROGRESS
 
 Basic Typography
 Navigation Bar
+Documentation
 
 TODO
 
