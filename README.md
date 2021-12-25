@@ -33,12 +33,15 @@ Cloning Repository (recommended)
 To clone, open terminal and cd into your preferred location. Then, copy the following lines into your terminal.
 
 `git clone https://github.com/iwannaplayminicraft/gel-css`
+
 `cd gel-css`
 
 Downloading Repository (not recommended)
 
 To download, click the dropdown labeled `Code` on the main repository.
+
 Click `Download Zip`
+
 Open the zip file and extract to your desired location and you can begin to use gel-css.
 
 ## Can I contribute to gel-css?
