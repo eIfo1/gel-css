@@ -1,13 +1,21 @@
-// Variable section
-// Thanks Tailwindcss.com for colors!
-// all of these are 500 and dark is 700 on the tailwind page.
+/*
+ _______    ______   __                 ______   ______   ______      
+/______/\  /_____/\ /_/\               /_____/\ /_____/\ /_____/\     
+\::::__\/__\::::_\/_\:\ \       _______\:::__\/ \::::_\/_\::::_\/_    
+ \:\ /____/\\:\/___/\\:\ \     /______/\\:\ \  __\:\/___/\\:\/___/\   
+  \:\\_  _\/ \::___\/_\:\ \____\__::::\/ \:\ \/_/\\_::._\:\\_::._\:\  
+   \:\_\ \ \  \:\____/\\:\/___/\          \:\_\ \ \ /____\:\ /____\:\ 
+    \_____\/   \_____\/ \_____\/           \_____\/ \_____\/ \_____\/ 
+                                                                      
 
-$primary: #0EA5E9;
-$danger: #EF4444;
-$warning: #EAB308;
-$success: #22C55E;
-$dark: #334155;
-$darker: #0F172A;
+Welcome to Gel CSS!
+Read the wiki for help setting up: https://github.com/iwannaplayminicraft/gel-css/wiki/
+
+*/
+
+@use "colors.scss";
+
+// Rest of normal variables
 $font: 'Ubuntu', 'Arial', 'serif';
 $font-weight: 300;
 
@@ -18,7 +26,6 @@ $hover: 250ms;
 }
 
 // CSS starts here
-// Thanks w3schools.com!
 
 * {
     margin: 0;
@@ -30,11 +37,6 @@ $hover: 250ms;
 
 body {
     font-family: $font;
-
-    &.dark {
-        background-color: $darker!important;
-        color: white;
-    }
 }
 
 button {
@@ -49,26 +51,6 @@ button {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    &.btn-primary {
-        background: $primary;
-        color: white;
-    }
-    &.btn-success {
-        background: $success;
-        color: white;
-    }
-    &.btn-danger {
-        background: $danger;
-        color: white;
-    }
-    &.btn-warning {
-        background: $warning;
-        color: white;
-    }
-    &.btn-dark {
-        background: $dark;
-        color: white;
-    }
 }
 
 .round { border-radius: 2px; transition: border-radius $hover; }
@@ -79,11 +61,6 @@ button {
     &.round:hover { border-radius: 6px; }
     &.rounder:hover { border-radius: 10px; }
     &.roundest:hover { border-radius: 13px; }
-}
-
-// TODO: Remove, replace with container class
-.wrapper {
-    margin: 15px;
 }
 
 .navbar {
@@ -110,22 +87,6 @@ button {
         &:hover {
             font-size: 19px;
         }
-    }
-    // Color codes for customizability
-    &.primary {
-        background: $primary;
-    }
-    &.danger {
-        background: $danger;
-    }
-    &.warning {
-        background: $warning;
-    }
-    &.success {
-        background: $success;
-    }
-    &.dark {
-        background: $dark;
     }
 }
 
@@ -180,19 +141,4 @@ $container-breakpoint: 900px;
         }
     }
     // Standardized alert colors
-    &.primary {
-        background: $primary;
-    }
-    &.success {
-        background: $success;
-    }
-    &.warning {
-        background: $warning;
-    }
-    &.danger {
-        background: $danger;
-    }
-    &.dark {
-        background: $dark;
-    }
 }
