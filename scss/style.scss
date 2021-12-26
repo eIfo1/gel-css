@@ -14,35 +14,29 @@ Read the wiki for help setting up: https://github.com/iwannaplayminicraft/gel-cs
 */
 
 @use "colors.scss";
-
-// Rest of normal variables
-$font: 'Ubuntu', 'Arial', 'serif';
-$font-weight: 300;
-
-$hover: 250ms;
+@use "var.scss";
 
 .text-white {
     color: white;
 }
 
-// CSS starts here
 
 * {
     margin: 0;
     padding: 0;
 
-    font-weight: $font-weight;
-    font-family: $font;
+    font-weight: var.$font-weight;
+    font-family: var.$font;
 }
 
 body {
-    font-family: $font;
+    font-family: var.$font;
 }
 
 button {
     // color defaults, these properties will be changed by class
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     // normal button stuff
     border: none;
     padding: 15px 32px;
@@ -54,11 +48,16 @@ button {
     &.noborder {
         border: none;
     }
+    @each $name, $value in var.$width {
+        &.width-#{$name} {
+            width: $value;
+        }
+    }
 }
 
-.round { border-radius: 2px; transition: border-radius $hover; }
-.rounder {border-radius: 5px; transition: border-radius $hover;}
-.roundest { border-radius: 8px; transition: border-radius $hover;}
+.round { border-radius: 2px; transition: border-radius var.$hover; }
+.rounder {border-radius: 5px; transition: border-radius var.$hover;}
+.roundest { border-radius: 8px; transition: border-radius var.$hover;}
 
 .br-hover {
     &.round:hover { border-radius: 6px; }
@@ -76,7 +75,7 @@ button {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: var.$nav-font-size;
     }
     // Links
     a {
@@ -85,10 +84,24 @@ button {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
-        transition: font-size $hover;
+        font-size: var.$nav-font-size;
+        transition: font-size var.$hover;
         &:hover {
-            font-size: 19px;
+            font-size: var.$nav-font-size + 4;
+        }
+    }
+    .right {
+        float: right;
+    }
+    .nav-container {
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+        a {
+            font-size: var.$nav-font-size - 6;
+            &:hover {
+                font-size: var.$nav-font-size - 2;
+            }
         }
     }
 }
