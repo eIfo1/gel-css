@@ -10,13 +10,14 @@ Roadmap
 ```
 COMPLETED
 
-Basic Light Theme
+Light Theme
+Dark Theme (unintentionally completed with color revamp)
 Alerts
+Colors
 
 IN PROGRESS
-
-Basic Typography
-Navigation Bar
+Basic Typography (90% completed, unintentionally half completed with color revamp)
+Navigation Bar (75% completed)
 Documentation
 
 TODO

@@ -1,0 +1,147 @@
+/*
+ _______    ______   __                 ______   ______   ______      
+/______/\  /_____/\ /_/\               /_____/\ /_____/\ /_____/\     
+\::::__\/__\::::_\/_\:\ \       _______\:::__\/ \::::_\/_\::::_\/_    
+ \:\ /____/\\:\/___/\\:\ \     /______/\\:\ \  __\:\/___/\\:\/___/\   
+  \:\\_  _\/ \::___\/_\:\ \____\__::::\/ \:\ \/_/\\_::._\:\\_::._\:\  
+   \:\_\ \ \  \:\____/\\:\/___/\          \:\_\ \ \ /____\:\ /____\:\ 
+    \_____\/   \_____\/ \_____\/           \_____\/ \_____\/ \_____\/ 
+                                                                      
+
+Welcome to Gel CSS!
+Read the wiki for help setting up: https://github.com/iwannaplayminicraft/gel-css/wiki/
+
+*/
+
+@use "colors.scss";
+
+// Rest of normal variables
+$font: 'Ubuntu', 'Arial', 'serif';
+$font-weight: 300;
+
+$hover: 250ms;
+
+.text-white {
+    color: white;
+}
+
+// CSS starts here
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-weight: $font-weight;
+    font-family: $font;
+}
+
+body {
+    font-family: $font;
+}
+
+button {
+    // color defaults, these properties will be changed by class
+    background-color: white;
+    color: black;
+    // normal button stuff
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    &.noborder {
+        border: none;
+    }
+}
+
+.round { border-radius: 2px; transition: border-radius $hover; }
+.rounder {border-radius: 5px; transition: border-radius $hover;}
+.roundest { border-radius: 8px; transition: border-radius $hover;}
+
+.br-hover {
+    &.round:hover { border-radius: 6px; }
+    &.rounder:hover { border-radius: 10px; }
+    &.roundest:hover { border-radius: 13px; }
+}
+
+.navbar {
+    overflow: hidden; 
+    margin-bottom: 5px;
+    // Logo/Brand
+    span {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    // Links
+    a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: font-size $hover;
+        &:hover {
+            font-size: 19px;
+        }
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+// used in conjunction with the container to test max-width sizes
+// comment out in production
+.box-model {
+    width: 800px;
+    border: 10px blue solid;
+    background: teal;
+    color: white;
+    margin-top: 10px;
+}
+
+// ease of use for people on smaller screens & zoomed devices
+$container-breakpoint: 900px;
+ @media only screen and (max-width: $container-breakpoint) {
+  .box-model {
+    background-color: lightblue;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+.alert {
+    padding: 16px;
+    width: 80%;
+    margin: auto;
+    color: white;
+    // For alerts containing more text
+    .alert-header {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .alert-body {
+        font-weight: normal;
+        font-size: 18px;
+    }
+    // For quick alerts!
+    &.centered {
+        .alert-header {
+            font-size: 18px;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+    // Standardized alert colors
+}
